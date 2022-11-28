@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <script>
+        function TDate() {
+            var today = new Date();
+            var maxDate = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;   
+            } 
+                
+            today = yyyy + '-' + mm + '-' + dd;
+                    
+            document.getElementById("date").setAttribute("min", today);
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <section class="booking" id="booking">
+            <h2 class="booking-title">Reserva</h2>
+            <form class="booking-form">
+                <div class="booking-form-group">
+                    <label for="name">Nombre*</label>
+                    <input required type="text" name="name" id="name"/>
+                </div>   
+                <div class="booking-form-group">
+                    <label for="surname">Apellidos*</label>
+                    <input required type="text" name="surname" id="surname"/>
+                </div>  
+                <div class="booking-form-group">
+                    <label for="email">Email*</label>
+                    <input required type="email" name="email" id="email"/>
+                </div>
+                <div class="booking-form-group">
+                    <label for="sex">Sexo*</label>
+                    <div class="sex-form-group">
+                        <label>Mujer</label>
+                        <input required type="radio" name="sex" value="m"/>
+                        <label>Hombre</label>
+                        <input required type="radio" name="sex" value="h"/>
+                    </div>
+                </div>
+                <div class="booking-form-group">
+                    <label for="phone">Telefono*</label>
+                    <input required type="text" name="phone" id="phone"/>
+                </div>
+                <div class="booking-form-group">
+                    <label for="treatment">Tratamiento*</label>
+                    <select name="treatment" required multiple size="12">
+                        <option selected disable>--Selecciona un tratamiento--</option>
+                        <optgroup label="Cabello Color">
+                            <option>Tinte</option>
+                            <option>Opcion 2</option>
+                            <option>Opción tres</option>
+                        </optgroup>
+                        <optgroup label="Cabello Tratamiento">
+                            <option>Tinte</option>
+                            <option>Opción tres</option>
+                        </optgroup>
+                        <optgroup label="Cabello Styling">
+                            <option>Lavar y peinar</option>
+                            <option>Lavar, cortar y peinar</option>
+                            <option>Semirecogidos u ondas</option>
+                            <option>Recogidos</option>
+                            <option>Definición Curly</option>
+                        </optgroup>
+                        <optgroup label="Manicura">
+                            <option>Opción cuatro</option>
+                            <option>Opción cinco</option>
+                            <option>Opción seis</option>
+                        </optgroup>
+                        <optgroup label="Pedicura">
+                            <option>Opción cuatro</option>
+                            <option>Opción cinco</option>
+                            <option>Opción seis</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="booking-form-group">
+                    <label for="employee">Profesional*</label>
+                    <select name="employee" required>
+                        <option selected disable>--Selecciona un/a profesional--</option>
+                        <option>Chisela</option>
+                        <option>José Antonio</option>
+                        <option>Nadia</option>
+                        <option>Román</option>
+                        <option>Sandra</option>
+                    </select>
+                </div>
+                <div class="booking-form-group">
+                    <label for="date">Fecha*</label>
+                    <input type="date" onclick="TDate()" name="date" id="date" required>
+                </div>
+                <div class="booking-form-group">
+                    <label for="time">Hora*</label>
+                    <input type="time" min="10:00" max="19:30" required>
+                    <span class="validity"></span>
+                </div>
+                <div class="booking-form-group">
+                    <label for="message">Comentarios (opcional)</label>
+                    <textarea name="message" id="message" rows="6"></textarea>
+                </div>
+                <button type="reset" class="booking-form-reset">Borrar</button> 
+                <button type="submit" class="booking-form-submit">Enviar</button> 
+            </form>
+        </section>
+    </div> 
+</body>
+</html>
