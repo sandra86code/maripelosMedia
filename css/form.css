@@ -1,0 +1,131 @@
+/*variables a cambiar según la guía de estilo*/
+:root{
+    --purple: rgb(150, 89, 201);
+    --dark-purple: rgb(111, 65, 150);
+    --light-purple: rgb(233, 205, 255);
+}
+html{
+    font-size: 16px;
+    font-family: "Poppins";
+}
+
+.contact {
+    font-size: 1rem;
+    color: var(--dark-purple);
+    box-shadow: 5px 10px 8px var(--dark-purple);
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    max-width:80%;
+   
+    display: grid;
+    align-items: start;
+}
+
+.contact p,
+.contact h2{
+    margin: 0;
+    padding: 0;
+}
+
+.contact-details{
+    background-color: var(--purple);
+    color: white;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details-group{
+    display: flex;
+    flex-basis: 10%;
+}
+.contact-details-title{
+    display: flex;
+    flex-basis: 20%;
+}
+.contact-details-image{
+    display: flex;
+    flex-basis: 20%;
+}
+
+.contact-details-title, .contact-form-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.3rem;
+}
+
+.contact-form-group {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.contact-label {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.contact-form-group label{
+    font-weight: 550;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 0.5rem;
+    border: none;
+    height: 1.8rem;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--light-purple);
+    font-family: inherit;
+}
+
+::placeholder {
+    color: var(--dark-purple);
+}
+
+.contact-form textarea {
+    height: auto;
+    resize: vertical;
+}
+
+.contact-form-submit {
+    width: 100%;
+    height: 3rem;
+    background-color: var(--purple);
+    border-radius: 0.5rem;
+    border: 1px solid var(--dark-purple);
+    color: white;
+    cursor: pointer;
+}
+
+.contact-form-submit:hover {
+    background-color: lightgreen;
+}
+
+/*en google chome no me funciona pero mozilla sí*/
+@media screen and (min-width: 600px) { 
+
+    .contact-details {
+        grid-area: details;
+    }
+    
+    .contact-form {
+        grid-area: form;
+    }
+    .contact {
+        grid-template-columns: 0.25fr 0.75fr;
+        grid-template-areas:
+        "details form";
+    }
+}
