@@ -21,10 +21,10 @@ html, body {
 
 header{
     display: grid;
-    grid-template-columns: repeat(auto-fit,1fr 1fr 1fr)  ;
+    grid-template-columns: 1fr 1fr 1fr  ;
     grid-template-rows: 1fr;
     grid-template-areas:
-    "logo logo hamburger hamburger";
+    "logo logo  hamburger";
     grid-area: header;
     background-color: #41415b;
     
@@ -39,9 +39,7 @@ footer{
     background-color: brown;
 }
 
-.hamburger-menu{
-    grid-area: hamburger;
-}
+
 .logo img{
     margin-top: 0.8%;
     width: 125px;
@@ -55,41 +53,74 @@ footer{
 }
 
 
-
+:root{
+  --white-color: white;
+}
 
 
 /* Funtion hamburger */
-
-
-#menu__toggle {
-    opacity: 0;
-  }
-  #menu__toggle:checked + .menu__btn > span {
-    transform: rotate(45deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    left: 0 !important;
-  }
-  .menu__btn {
-    position: fixed;
-    top: 65px;
-   
-    right: 40px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    z-index: 1;
-  }
-
+.button{
+  margin-top: 11%;
+  margin-left: 40%;
+  color: var(--white-color);
   
+  
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  background-color: #e7dfdb;
+  overflow-x: hidden;
+  transition: 0.5s;
+  grid-area: hamburger;
+  
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #5a4c59
+  ;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #5a4c59;
+}
+
+.overlay .closebtn {
+
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+
+/* Close hamburguer*/
+
+
   /*carrusel*/
 
   .slide {
