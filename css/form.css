@@ -9,7 +9,7 @@ html{
     font-family: "Poppins";
 }
 
-.contact {
+.content {
     font-size: 1rem;
     color: var(--dark-purple);
     box-shadow: 5px 10px 8px var(--dark-purple);
@@ -18,11 +18,10 @@ html{
     max-width:80%;
    
     display: grid;
-    align-items: start;
 }
 
-.contact p,
-.contact h2{
+.content p,
+.content h2{
     margin: 0;
     padding: 0;
 }
@@ -33,12 +32,13 @@ html{
     height: 100%;
     box-sizing: border-box;
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 1rem;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-
+/*Los items del flexbox ocupan todo el ancho. arreglarlo*/
 .contact-details-group{
     display: flex;
     flex-basis: 10%;
@@ -123,7 +123,7 @@ html{
     .contact-form {
         grid-area: form;
     }
-    .contact {
+    .content {
         grid-template-columns: 0.25fr 0.75fr;
         grid-template-areas:
         "details form";
