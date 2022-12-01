@@ -30,10 +30,25 @@ header{
     
 }
 .container-primary{
+    display: grid;
     grid-area: primary;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    
+    grid-auto-flow: dense;
     
 }
-
+.item .card{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.item .card img{
+  
+  height: 100%;
+  max-width: 400px;
+  object-fit: cover ;
+}
 footer{
     grid-area: footer;
     background-color: brown;
