@@ -1,18 +1,273 @@
+:root{
+  --white-color: white;
+  --mediumPurple-color:#5a4c59;
+  --beige-color:#f1ece9;
+  --gold-color:#b78838;
 
-/* Control de fechas*/
-input:invalid + span::after {
-    position: absolute;
-    content: "✖";
-    padding-left: 5px;
-  }
-  
-  input:valid + span::after {
-    position: absolute;
-    content: "✓";
-    padding-left: 5px;
-  }
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+/* Título */
+.booking-title {
+  font-size: 55px;
+  color: var(--mediumPurple-color);
+  font-weight: bold;
+}
+
 
 /*Select visible */
 select {
     overflow-y: auto;
+}
+
+/* Etiquetas invisibles */
+label.invisible {
+  visibility: hidden;
+}
+
+label {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+form {
+  margin: auto;
+  width: 100%;
+}
+
+fieldset {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  
+}
+
+
+legend {
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--mediumPurple-color);
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 97%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: auto;
+  text-indent: 10px;
+  font-size: 25px;
+}
+
+input[type="radio"] {
+  width: 3%;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  transform: scale(2);
+  cursor: pointer;
+  
+}
+
+input[type="date"],
+input[type="time"] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1.4rem;
+}
+
+input[type="date"] {
+  width: 220px;
+}
+
+input[type="time"] {
+  width: 190px;
+  margin-bottom: 2rem;
+}
+
+::placeholder {
+  font-size: 25px;
+}
+
+textarea {
+  width: 95%;
+  font-size: 25px;
+  padding: 10px;
+  margin-bottom: 2rem;
+  resize: none;
+}
+
+option {
+  font-size: 25px;
+}
+
+button[type="submit"],
+button[type="reset"] {
+  border-radius: 5px;
+  display: inline-block;
+  color: var(--white-color);
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+button[type="submit"] {
+  border: 2px solid var(--gold-color);
+	background-color: var(--gold-color);
+
+}
+
+button[type="reset"] {
+  border: 2px solid var(--mediumPurple-color);
+	background-color: var(--mediumPurple-color);
+}
+
+button:active {
+  filter: brightness(0.85);
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(0.85);
+}
+
+.booking-buttons {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.booking-title {
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+input, select, textarea {
+  border-radius: 7px;
+  border: 1px solid var(--beige-color);
+  background-color: var(--beige-color);
+}
+
+.checkbox-selectbox {
+  display: none;
+}
+
+.booking-form-group {
+  grid: "booking-form-checkbox"
+        "booking-form-select";
+}
+
+select {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-indent: 5px;
+  padding-right: 15px;
+}
+
+.booking-form-group {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.booking-form-group input[type="checkbox"] {
+  margin-left: 0.5rem;
+}
+
+input[type="tel"] {
+  margin-bottom: 2rem;
+}
+
+
+@media only screen and (min-width: 600px){ /* Tablets*/
+
+  /* Etiquetas invisibles */
+  label.invisible {
+    visibility: visible;
+  }
+
+  .booking-form-group {
+    width: 70%;
+    margin: auto;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  input, select, textarea {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline-block !important;
+  }
+
+}
+
+
+@media only screen and (min-width: 800px){ /* Pc*/
+  
+  /* Etiquetas invisibles */
+  label.invisible {
+    visibility: visible;
+  }
+
+  input {
+    width: 90%;
+    margin-left: 1rem;
+  }
+
+  label {
+    width: 40%;
+    
+  }
+
+  input, select, textarea {
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+  .booking-form-group-data {
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "booking-form-label booking-form-input"
+  }
+
+  .booking-form-label {
+    grid-area: booking-form-label;
+    margin-top: 25px;
+  }
+  
+  .booking-form-input {
+    grid-area: booking-form-input;
+    width: 100%;
+  }
 }
