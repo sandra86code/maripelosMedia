@@ -1,18 +1,20 @@
 /*variables a cambiar según la guía de estilo*/
 :root{
-    --purple: rgb(150, 89, 201);
-    --dark-purple: rgb(111, 65, 150);
-    --light-purple: rgb(233, 205, 255);
+    --dark-blue: #41415b;
+    --dark-purple: #5a4c59;
+    --dark-grey: #8b7e75;
+    --light-grey: #e7dfdb;
+    --gold: #b78838;
 }
 html{
-    font-size: 16px;
+    font-size: 12px;
     font-family: "Poppins";
 }
+
 /*grid principal*/
 .content {
-    box-shadow: 5px 10px 8px var(--dark-purple);
+    box-shadow: 5px 10px 8px var(--dark-blue);
     border-radius: 0.5rem;
-    margin: 0 auto;
    
     display: grid;
     grid-template-columns: 1fr;
@@ -20,12 +22,6 @@ html{
     grid-template-areas: 
     "details"
     "form";
-}
-.contact-details {
-    grid-area: details;
-}
-.contact-form {
-    grid-area: form;
 }
 
 /*resetear valores por defecto dentro del grid principal*/
@@ -35,22 +31,17 @@ html{
     padding: 0;
 }
 
-/*grid item del grid principal*/
-.contact-details{
-    background-color: var(--purple);
-    color: white;
-    border-radius: 0.5rem;
-    padding: 1rem; 
-}
+.contact-details {
+    background-color: var(--dark-purple);
+    border-radius: inherit;
+    padding: 1.2rem;
+    color: var(--light-grey);
+    word-break: break-word;
 
-/*grid dentro del grid item*/
-.grid-details{
-    width: 100%;
-    height:100%;
-
+    grid-area: details;
     display: grid;
-    grid-template-columns: 0.10fr 0.90fr;
-    grid-template-rows: 0.20fr, 0.10fr, 0.30fr, 0.10fr, 0.10fr;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows:  0.5fr, 0.5fr, 3fr, 0.5fr, 0.5fr, 0.5fr;
     grid-template-areas: 
     "title title"
     "adIcon adText"
@@ -58,91 +49,107 @@ html{
     "eIcon eText"
     "pIcon pText"
     "hIcon hText";
-    gap: 1.5rem;
+    gap: 1rem;
 }
-/*grid areas*/
+
+/*grid areas for details*/
 .details-title{
-    display: grid;
     grid-area: title;
+    width: max-content; 
+    justify-self: center;
+
+    text-transform: uppercase;
+    color: var(--gold);
 }
 .details-adress-icon{
-    display: grid;
     grid-area: adIcon;
+    justify-self: center;
+    align-self: center;
 }
 .details-adress-text{
-    display: grid;
     grid-area: adText;
+    align-self: center;
 }
 .details-map{
-    display: grid;
     grid-area: map;
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    justify-self: center;
+}
+.details-map iframe{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: #b78838;
+    border-radius: 0.5rem;
 }
 .details-email-icon{
-    display: grid;
     grid-area: eIcon;
+    justify-self: center;
+    align-self: center;
 }
 .details-email-text{
-    display: grid;
     grid-area: eText;
+    align-self: center;
 }
 .details-phone-icon{
-    display: grid;
     grid-area: pIcon;
+    justify-self: center;
+    align-self: center;
 }
 .details-phone-text{
-    display: grid;
     grid-area: pText;
+    align-self: center;
 }
 .details-hour-icon{
-    display: grid;
     grid-area: hIcon;
+    justify-self: center;
+    align-self: center;
 }
 .details-hour-text{
-    display: grid;
     grid-area: hText;
+    align-self: center;
 }
 
-.details-map iframe{
-    max-width: 100%;
+.contact-details p{
+    font-size: 0.9rem;
+}
+.contact-details i{
+    font-size: 1.5rem;
+    color: var(--gold);
 }
 
-.details-title, .form-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-}
 
 .contact-form {
-    border-radius: 0.5rem;
+    border-radius: inherit;
+    color: var(--dark-blue);
     padding: 1.5rem;
-    color: var(--dark-purple);
+
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.1fr;
 }
 
-.grid-form{
-    display: grid;
-    gap: 1.3rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.20fr 0.10fr 0.10fr 0.10fr 0.20fr 0.10fr;
-    
+.form-title{
+    width: max-content; 
+    justify-self: center;
 }
 
 .form-group {
     display: grid;
     gap: 0.2rem;
+    border-radius: inherit;
 }
 
-.form-group label{
-    font-weight: 550;
-}
-
-.grid-form input,
-.grid-form textarea {
-    border-radius: 0.5rem;
+.contact-form input,
+.contact-form textarea {
+    border-radius: inherit;
     border: none;
     height: 1.8rem;
     padding: 0.2rem 0.5rem;
-    background-color: var(--light-purple);
+    background-color: var(--light-grey);
     font-family: inherit;
 }
 
@@ -150,32 +157,42 @@ html{
     color: var(--dark-purple);
 }
 
-.grid-form textarea {
+.contact-form textarea {
     height: auto;
     resize: vertical;
 }
 
 .form-submit {
+    border-radius: inherit;
+    border: none;
     width: 100%;
     height: 3rem;
-    background-color: var(--purple);
-    border-radius: 0.5rem;
-    border: 1px solid var(--dark-purple);
+    background-color: var(--gold);
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
 }
 
-.form-submit:hover {
-    background-color: lightgreen;
+
+/* responsive */
+
+/* desktop */
+@media (min-width: 1400px) {
+  html {
+    font-size: 25px;
+  }
+  .content {
+    grid-template-columns: 0.25fr 0.75fr;
+    grid-template-areas:
+    "details form";
+}
 }
 
-/*en google chome no me funciona pero mozilla sí*/
-@media screen and (min-width: 600px) { 
-
-    
-    .content {
-        grid-template-columns: 0.25fr 0.75fr;
-        grid-template-areas:
-        "details form";
-    }
+/* tablet */ 
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
 }
+
