@@ -1,0 +1,48 @@
+/* imagen body */
+.item .card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .item .card img{
+    
+    height: 100%;
+    /* max-width: ; */
+    width: 100%;
+    object-fit: cover ;
+  }
+  .item .button button{
+    background-color: #b78838;
+    border: none;
+      color: white;
+      border-radius: 5px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 30px;
+      
+      
+      position: absolute;
+      opacity: 0.8;
+      top: 85%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+      
+      
+      
+  }
+  
+  .container{
+    display: grid;
+    width: 100%;
+   
+    grid-template-columns: auto-fir,1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "item";
+    grid-auto-flow: dense;
+    
+}
+  /* imagen body close*/
+  
