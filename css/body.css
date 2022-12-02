@@ -33,6 +33,16 @@
       
   }
   
-  
+  .container{
+    display: grid;
+    width: 100%;
+   
+    grid-template-columns: auto-fir,1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "item";
+    grid-auto-flow: dense;
+    
+}
   /* imagen body close*/
   
