@@ -1,121 +1,295 @@
-/* Common CSS style */
-html, body {
-    margin: 0;
-    height: 100%;
-    font-family: 'Poppins';
-    font-size: 16px;
+
+/* definicion de colores */
+:root{
+    --white-color: white;
+    --black-color: #000000;
+    --darkPurple-color: #41415b;
+    --mediumPurple-color:#5a4c59;
+    --medium-color:#8b7e75;
+    --cream--color:#e7dfdb;
+    --gold--color:#b78838;
+    --fontFamily: 'Poppins';
+  
   }
+  /* definicion de colores close*/
+  
+  
+  
+  html, body {
+      margin: 0;
+      height: 100%;
+      font-family: var(--fontFamily);
+      font-size: 16px;
+      
+    }
+  
+  
   
   .grid-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-    grid-template-rows: 0.2fr 1fr 0.2fr;
-  
-    grid-template-areas: 
-    "header   header  header  header" 
-    "content content content content" 
-    "footer   footer  footer  footer";
-    height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr ;
+      grid-template-rows: 0.2fr 1fr 0.2fr;
+      height: 100vh;
+      grid-template-areas: 
+      "header   header  header  header" 
+      "content   content  content  content" 
+      "footer   footer  footer  footer";
     
+      
   }
-  
-  /* Begin header */
-  
-  header{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr  ;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-    "logo logo  hamburger";
-    grid-area: header;
-    background-color: #41415b;
-    
-  }
-  .content{
+  .container{
     grid-area: content;
   }
-
-/* Begin footer */
-footer{
+  
+  header{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr  ;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+      "logo logo  hamburger";
+      grid-area: header;
+      background-color:var(--darkPurple-color);
+      
+  }
+  
+  
+  
+  /* Logo */
+  .logo img{
+      margin-top: 0.8%;
+      width: 100px;
+      height: auto;
+      margin-left: 10px;
+  }
+  .logo{
+      object-fit: cover;
+      grid-area: logo;
+      background-color: var(--darkPurple-color);
+  }
+  /* Logo close */
+  
+  
+  /* Funtion hamburger */
+  .button{
+    margin-top: 12%;
+    margin-left: 40%;
+    color: var(--white-color);
+    
+    
+  }
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:var(--black-color);
+    background-color: var(--cream--color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    grid-area: hamburger;
+    
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: var(--mediumPurple-color)
+    ;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: var(--mediumPurple-color)
+  }
+  
+  .overlay .closebtn {
+  
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+  /* Close hamburguer*/
+  
+  .about{
+    grid-area: about;
+    
+    
+  }
+  
+  .services{
+    grid-area: services;
+    
+  }
+  
+  .contact{
+    grid-area: contact;
+    
+  }
+  
+  .reservas{
+    grid-area: reservas;
+    
+  }
+  
+  
+  /* button menu*/
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--gold--color);
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: var(--cream--color);
+    box-shadow: 2px 2px 6px var(--black-color);
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+  
+  /* close funtion hamburger */
+  /* Begin footer */
+  footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr  ;
     grid-template-rows: repeat(3, 55px);
     grid-area: footer;
-    background-color: #41415b;
+    background-color: var(--darkPurple-color);
     grid-template-areas:
     "social-media1 social-media2 social-media3"
     "tlf tlf tlf"
     "copyright copyright copyright";
     padding: 2%;
-    color: white;
-}
-
-
-.tlf{
+    color: var(--white-color);
+  }
+  
+  
+  .tlf{
     grid-area: tlf;
     font-size: 30px;
     text-align: center;
-}
-
-.social-media1 {
+  }
+  
+  .social-media1 {
     grid-area: social-media1;
     display: block;
     margin: auto;
-
-}
-
-.social-media2 {
+  
+  }
+  
+  .social-media2 {
     grid-area: social-media2;
     width: 25px;
     display: block;
     margin: auto;
-}
-
-.social-media3 {
+  }
+  
+  .social-media3 {
     grid-area: social-media3;
     width: 25px;
     display: block;
     margin: auto;
-}
-
-
-.copyright{
+  }
+  
+  
+  .copyright{
     grid-area: copyright;
     font-size: 30px;
     text-align: center;
     padding-bottom: 15px;
     
-}
-
-svg {
-    fill: #b78838;
+  }
+  
+  svg {
+    fill: var(--gold--color);
     width: 30px;
-}
-.fb {
+  }
+  .fb {
     width: 25px;
-}
-
-@media (min-width:800px){
+  }
+  
+  @media (min-width:800px){
+    header{
+      grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: 
+      "logo about services contact reservas ";
+    }
+    /* hamburguesa*/
+    .button{
+      visibility: hidden;
+    }
+  
     footer{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr  ;
         grid-template-rows: repeat(4, 40px);
         grid-area: footer;
-        background-color: #41415b;
+        background-color: var(--darkPurple-color);
         grid-template-areas:
         "social-media1 social-media2 social-media3"
         "social-media1 social-media2 social-media3"
         "tlf tlf tlf"
         "copyright copyright copyright";
         padding: 2%;
-        color: white;
+        color: var(--white-color);
         width: auto;
     }
-
+  
     
-}
+  }
+  
 
-
-/* End footer*/
-
-/* End Common CSS style */
+  /* End footer*/
