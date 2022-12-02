@@ -1,34 +1,6 @@
-/* Style the Image Used to Trigger the Modal */
-html, body{
-    height: 100%;
-    font-family: 'Poppins';
-    font-size: 16px;
-    margin: 0;
-}
-
-.site-wrap{
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 0.2fr;
-    grid-template-areas:     
-    "header     header      header      header" 
-    "gallery    gallery     gallery     gallery" 
-    "footer     footer      footer      footer";
-}
-.header{
-    display: grid;
-    grid-area: header;
-}
-
-.footer{
-    display: grid;
-    grid-area: footer;
-}
-
 .content{
     display: grid;
-    grid-area: gallery;
+    grid-area: content;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     grid-template-rows: auto;
     gap: 20px;
@@ -129,9 +101,20 @@ html, body{
 }
     
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+/* 80% Image Width on Smaller Screens */
+@media only screen and (max-width: 400px){
 .modal-content {
-    width: 100%;
+    width: 80%;
+    height: 80%;
+    font-size: 18px;
+    }
 }
+
+/* 90% Image Width on Smaller Screens */
+@media only screen and (max-width: 600px){
+    .modal-content {
+        width: 90%;
+        height: 90%;
+        font-size: 30px;
+    }
 }

@@ -1,0 +1,121 @@
+/* Common CSS style */
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Poppins';
+    font-size: 16px;
+  }
+  
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 0.2fr 1fr 0.2fr;
+  
+    grid-template-areas: 
+    "header   header  header  header" 
+    "content content content content" 
+    "footer   footer  footer  footer";
+    height: 100vh;
+    
+  }
+  
+  /* Begin header */
+  
+  header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  ;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "logo logo  hamburger";
+    grid-area: header;
+    background-color: #41415b;
+    
+  }
+  .content{
+    grid-area: content;
+  }
+
+/* Begin footer */
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  ;
+    grid-template-rows: repeat(3, 55px);
+    grid-area: footer;
+    background-color: #41415b;
+    grid-template-areas:
+    "social-media1 social-media2 social-media3"
+    "tlf tlf tlf"
+    "copyright copyright copyright";
+    padding: 2%;
+    color: white;
+}
+
+
+.tlf{
+    grid-area: tlf;
+    font-size: 30px;
+    text-align: center;
+}
+
+.social-media1 {
+    grid-area: social-media1;
+    display: block;
+    margin: auto;
+
+}
+
+.social-media2 {
+    grid-area: social-media2;
+    width: 25px;
+    display: block;
+    margin: auto;
+}
+
+.social-media3 {
+    grid-area: social-media3;
+    width: 25px;
+    display: block;
+    margin: auto;
+}
+
+
+.copyright{
+    grid-area: copyright;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 15px;
+    
+}
+
+svg {
+    fill: #b78838;
+    width: 30px;
+}
+.fb {
+    width: 25px;
+}
+
+@media (min-width:800px){
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr  ;
+        grid-template-rows: repeat(4, 40px);
+        grid-area: footer;
+        background-color: #41415b;
+        grid-template-areas:
+        "social-media1 social-media2 social-media3"
+        "social-media1 social-media2 social-media3"
+        "tlf tlf tlf"
+        "copyright copyright copyright";
+        padding: 2%;
+        color: white;
+        width: auto;
+    }
+
+    
+}
+
+
+/* End footer*/
+
+/* End Common CSS style */
