@@ -49,7 +49,7 @@ header{
     background-color:var(--darkPurple-color);
     
 }
-.container-primary{
+.container{
     display: grid;
     width: 100%;
     grid-area: primary;
