@@ -7,8 +7,8 @@
   --darkPurple-color: #41415b;
   --mediumPurple-color:#5a4c59;
   --medium-color:#8b7e75;
-  --cream--color:#e7dfdb;
-  --gold--color:#b78838;
+  --cream-color:#e7dfdb;
+  --gold-color:#b78838;
   --fontFamily: 'Poppins';
 
 }
@@ -86,7 +86,7 @@ header{
   top: 0;
   left: 0;
   background-color:var(--black-color);
-  background-color: var(--cream--color);
+  background-color: var(--cream-color);
   overflow-x: hidden;
   transition: 0.5s;
   grid-area: hamburger;
@@ -162,7 +162,7 @@ header{
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: var(--gold--color);
+  background-color: var(--gold-color);
   transition-duration: .25s;
 }
 .menu__btn > span::before {
@@ -183,7 +183,7 @@ header{
   margin: 0;
   padding: 80px 0;
   list-style: none;
-  background-color: var(--cream--color);
+  background-color: var(--cream-color);
   box-shadow: 2px 2px 6px var(--black-color);
   transition-duration: .25s;
 }
@@ -245,7 +245,7 @@ footer{
 }
 
 svg {
-  fill: var(--gold--color);
+  fill: var(--gold-color);
   width: 30px;
 }
 
