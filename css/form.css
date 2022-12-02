@@ -8,51 +8,105 @@ html{
     font-size: 16px;
     font-family: "Poppins";
 }
-
+/*grid principal*/
 .content {
-    font-size: 1rem;
-    color: var(--dark-purple);
     box-shadow: 5px 10px 8px var(--dark-purple);
     border-radius: 0.5rem;
     margin: 0 auto;
-    max-width:80%;
    
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "details"
+    "form";
+}
+.contact-details {
+    grid-area: details;
+}
+.contact-form {
+    grid-area: form;
 }
 
+/*resetear valores por defecto dentro del grid principal*/
 .content p,
 .content h2{
     margin: 0;
     padding: 0;
 }
 
+/*grid item del grid principal*/
 .contact-details{
     background-color: var(--purple);
     color: white;
-    height: 100%;
-    box-sizing: border-box;
     border-radius: 0.5rem;
-    padding: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-/*Los items del flexbox ocupan todo el ancho. arreglarlo*/
-.contact-details-group{
-    display: flex;
-    flex-basis: 10%;
-}
-.contact-details-title{
-    display: flex;
-    flex-basis: 20%;
-}
-.contact-details-image{
-    display: flex;
-    flex-basis: 20%;
+    padding: 1rem; 
 }
 
-.contact-details-title, .contact-form-title {
+/*grid dentro del grid item*/
+.grid-details{
+    width: 100%;
+    height:100%;
+
+    display: grid;
+    grid-template-columns: 0.10fr 0.90fr;
+    grid-template-rows: 0.20fr, 0.10fr, 0.30fr, 0.10fr, 0.10fr;
+    grid-template-areas: 
+    "title title"
+    "adIcon adText"
+    "map map"
+    "eIcon eText"
+    "pIcon pText"
+    "hIcon hText";
+    gap: 1.5rem;
+}
+/*grid areas*/
+.details-title{
+    display: grid;
+    grid-area: title;
+}
+.details-adress-icon{
+    display: grid;
+    grid-area: adIcon;
+}
+.details-adress-text{
+    display: grid;
+    grid-area: adText;
+}
+.details-map{
+    display: grid;
+    grid-area: map;
+}
+.details-email-icon{
+    display: grid;
+    grid-area: eIcon;
+}
+.details-email-text{
+    display: grid;
+    grid-area: eText;
+}
+.details-phone-icon{
+    display: grid;
+    grid-area: pIcon;
+}
+.details-phone-text{
+    display: grid;
+    grid-area: pText;
+}
+.details-hour-icon{
+    display: grid;
+    grid-area: hIcon;
+}
+.details-hour-text{
+    display: grid;
+    grid-area: hText;
+}
+
+.details-map iframe{
+    max-width: 100%;
+}
+
+.details-title, .form-title {
     font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
@@ -62,26 +116,28 @@ html{
 .contact-form {
     border-radius: 0.5rem;
     padding: 1.5rem;
-    display: grid;
-    gap: 1.3rem;
+    color: var(--dark-purple);
 }
 
-.contact-form-group {
+.grid-form{
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.20fr 0.10fr 0.10fr 0.10fr 0.20fr 0.10fr;
+    
+}
+
+.form-group {
     display: grid;
     gap: 0.2rem;
 }
 
-.contact-label {
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.contact-form-group label{
+.form-group label{
     font-weight: 550;
 }
 
-.contact-form input,
-.contact-form textarea {
+.grid-form input,
+.grid-form textarea {
     border-radius: 0.5rem;
     border: none;
     height: 1.8rem;
@@ -94,12 +150,12 @@ html{
     color: var(--dark-purple);
 }
 
-.contact-form textarea {
+.grid-form textarea {
     height: auto;
     resize: vertical;
 }
 
-.contact-form-submit {
+.form-submit {
     width: 100%;
     height: 3rem;
     background-color: var(--purple);
@@ -109,20 +165,14 @@ html{
     cursor: pointer;
 }
 
-.contact-form-submit:hover {
+.form-submit:hover {
     background-color: lightgreen;
 }
 
 /*en google chome no me funciona pero mozilla sí*/
 @media screen and (min-width: 600px) { 
 
-    .contact-details {
-        grid-area: details;
-    }
     
-    .contact-form {
-        grid-area: form;
-    }
     .content {
         grid-template-columns: 0.25fr 0.75fr;
         grid-template-areas:
