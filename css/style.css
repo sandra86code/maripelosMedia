@@ -32,12 +32,14 @@ html, body {
     height: 100vh;
     grid-template-areas: 
     "header   header  header  header" 
-    "primary   primary  primary  primary" 
+    "content   content  content  content" 
     "footer   footer  footer  footer";
   
     
 }
-
+.container{
+  grid-area: content;
+}
 
 header{
     display: grid;
@@ -49,17 +51,7 @@ header{
     background-color:var(--darkPurple-color);
     
 }
-.container{
-    display: grid;
-    width: 100%;
-    grid-area: primary;
-    grid-template-columns: auto-fir,1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-    "item";
-    grid-auto-flow: dense;
-    
-}
+
 
 
 /* Logo */
@@ -79,7 +71,7 @@ header{
 
 /* Funtion hamburger */
 .button{
-  margin-top: 20%;
+  margin-top: 12%;
   margin-left: 40%;
   color: var(--white-color);
   
@@ -139,9 +131,26 @@ header{
 }
 /* Close hamburguer*/
 
+.about{
+  grid-area: about;
+  
+  
+}
 
-  /*carrusel*/
-/*End carrusel*/
+.services{
+  grid-area: services;
+  
+}
+
+.contact{
+  grid-area: contact;
+  
+}
+
+.reservas{
+  grid-area: reservas;
+  
+}
 
 
 /* button menu*/
@@ -253,6 +262,16 @@ svg {
 }
 
 @media (min-width:800px){
+  header{
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "logo about services contact reservas ";
+  }
+  /* hamburguesa*/
+  .button{
+    visibility: hidden;
+  }
+
   footer{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr  ;
