@@ -1,37 +1,18 @@
 /* imagen body */
-.item .card{
+.card{
     width: 100%;
     height: 100%;
     position: relative;
+    grid-area: item;
   }
-  .item .card img{
+.card img{
     
     height: 100%;
     /* max-width: ; */
     width: 100%;
     object-fit: cover ;
   }
-  .item .button button{
-    background-color: #b78838;
-    border: none;
-      color: white;
-      border-radius: 5px;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 30px;
-      
-      
-      position: absolute;
-      opacity: 0.8;
-      top: 85%;
-      left: 50%;
-      transform:translate(-50%,-50%);
-      
-      
-      
-  }
+
   
   .container{
     display: grid;
@@ -45,4 +26,71 @@
     
 }
   /* imagen body close*/
+.button button{
+    background-color: #b78838;
+    border: none;
+      color: white;
+      border-radius: 5px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 30px;
+      visibility: visible;
+      
+      position: absolute;
+      opacity: 0.8;
+      top: 85%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+      
+      
+      
+  }
+/*Publicidad */
+.asideRigt{
+  grid-area: asideRigt;
+  visibility: hidden;
+  display: none;
   
+}
+.asideRigt img{
+  height: 100%;
+  /*padding-left: 2px;*/
+  width: 100%;
+  object-fit: cover ;
+}
+/*
+.asideLeft{
+  grid-area: asideLeft;
+  visibility: hidden;
+  display: none;
+  
+}
+.asideLeft img{
+  height: 100%;
+  
+  width: 100%;
+  object-fit: cover ;
+}
+*/
+@media (min-width:800px){
+  /*
+  .asideLeft{ 
+    visibility: visible;
+    display: contents;
+    
+  }
+  */
+  .asideRigt{
+    visibility: visible;
+    display: contents;
+    margin-right: 5px;
+  }
+  .container{
+    grid-template-columns: 0.9fr 0.5fr ;
+    
+    grid-template-areas:
+    " item asideRigt";
+  }
+}
