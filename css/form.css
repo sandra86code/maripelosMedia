@@ -1,19 +1,7 @@
-/*variables a cambiar según la guía de estilo*/
-:root{
-    --dark-blue: #41415b;
-    --dark-purple: #5a4c59;
-    --dark-grey: #8b7e75;
-    --light-grey: #e7dfdb;
-    --gold: #b78838;
-}
-html{
-    font-size: 12px;
-    font-family: "Poppins";
-}
 
 /*grid principal*/
-.content {
-    box-shadow: 5px 10px 8px var(--dark-blue);
+.container {
+    box-shadow: 5px 10px 8px var(--darkPurple-color);
     border-radius: 0.5rem;
    
     display: grid;
@@ -25,17 +13,17 @@ html{
 }
 
 /*resetear valores por defecto dentro del grid principal*/
-.content p,
-.content h2{
+.container p,
+.container h2{
     margin: 0;
     padding: 0;
 }
 
 .contact-details {
-    background-color: var(--dark-purple);
+    background-color: var(--mediumPurple-color);
     border-radius: inherit;
     padding: 1.2rem;
-    color: var(--light-grey);
+    color: var( --cream-color);
     word-break: break-word;
 
     grid-area: details;
@@ -59,7 +47,7 @@ html{
     justify-self: center;
 
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-color);
 }
 .details-adress-icon{
     grid-area: adIcon;
@@ -117,13 +105,13 @@ html{
 }
 .contact-details i{
     font-size: 1.5rem;
-    color: var(--gold);
+    color: var(--gold-color);
 }
 
 
 .contact-form {
     border-radius: inherit;
-    color: var(--dark-blue);
+    color: var(--darkPurple-color);
     padding: 1.5rem;
 
     display: grid;
@@ -149,12 +137,12 @@ html{
     border: none;
     height: 1.8rem;
     padding: 0.2rem 0.5rem;
-    background-color: var(--light-grey);
+    background-color: var(--cream-color);
     font-family: inherit;
 }
 
 ::placeholder {
-    color: var(--dark-purple);
+    color: var(--mediumPurple-color);
 }
 
 .contact-form textarea {
@@ -167,7 +155,7 @@ html{
     border: none;
     width: 100%;
     height: 3rem;
-    background-color: var(--gold);
+    background-color: var(--gold-color);
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -182,7 +170,7 @@ html{
   html {
     font-size: 25px;
   }
-  .content {
+  .container {
     grid-template-columns: 0.25fr 0.75fr;
     grid-template-areas:
     "details form";
