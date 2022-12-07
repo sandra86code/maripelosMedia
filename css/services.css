@@ -156,7 +156,7 @@ table {
         display: grid;
         grid-area: content;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 1fr);
+        grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 1fr 0.2fr 1fr 1fr 1fr;
         grid-template-areas:
         "title"
         "table1" 
@@ -170,11 +170,9 @@ table {
         "table9"
         ;
     }
-    /*table {
-        width: 120px;
-        margin-left: 0px;
-        margin-right: 0px
-    } */
+    table {
+        width: 170px;
+    } 
     }
 
 
