@@ -171,7 +171,9 @@ table {
         ;
     }
     table {
-        width: 100px;
+        width: 120px;
+        margin-left: 0px;
+        margin-right: 0px
     } 
     }
 
