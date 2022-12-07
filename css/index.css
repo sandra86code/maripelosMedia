@@ -1,3 +1,8 @@
+:root{
+  --white-color: white;
+  --mediumPurple-color:#5a4c59;
+}
+
 /* imagen body */
 .card{
     width: 100%;
@@ -17,12 +22,38 @@
     display: grid;
     width: 100%;
    
-    grid-template-columns: auto-fir,1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.7fr;
     grid-template-areas:
-    "item";
-    grid-auto-flow: dense;
+    "item"
+    "shop";
     
+}
+
+.shop {
+  grid-area: shop;
+  width: 100%;
+  text-align: center;
+}
+
+.shop-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--mediumPurple-color);
+}
+
+.shop-pic {
+  width: 80%;
+  margin: auto;
+  object-fit: cover;
+}
+
+.shop-pic img{
+  width: 100%;
+}
+
+.aside {
+  display: none;
 }
   /* imagen body close*/
 .button button{
@@ -39,7 +70,7 @@
       
       position: absolute;
       opacity: 0.8;
-      top: 85%;
+      top: 55%;
       left: 50%;
       transform:translate(-50%,-50%);
       
@@ -49,8 +80,29 @@
 
 @media (min-width:800px){
 
-  .card img{
+  .container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 0.4fr;
+    grid-template-areas:
+    "item item"
+    "shop aside";
+  }
+
+  .aside {
+    display: contents;
+    width: 90%;
+    margin-right: 40px;
     
+  }
+
+  .aside img {
+    object-fit: cover;
+    width: 90%;
+    margin-bottom: 100px;
+  }
+  .card img{
     height: 900px;
     width: 100%;
     object-fit: cover ;
