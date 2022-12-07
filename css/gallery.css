@@ -78,13 +78,6 @@
     color:var(--gold-color);
 }
 
-.modal-content, #caption {   
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.1s;
-    animation-name: zoom;
-    animation-duration: 0.1s;
-}
-
 .modal .modal-content img{
     height: 70%;
     width: 100%;
@@ -103,16 +96,6 @@
     padding: 10px;
 }
 
-@-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-}
-    
 
 /* 80% Image Width on Smaller Screens */
 @media only screen and (max-width: 400px){
