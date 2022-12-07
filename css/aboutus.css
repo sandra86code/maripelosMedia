@@ -3,14 +3,43 @@
 }
 /*este está pensado primero para desktop porque tiene aside*/
 .container{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    word-break: break-word;
+    max-width: 95%;
+    margin-left: 2rem;
+
     display:grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
     "aside us";
+    gap: 2rem;
 }
 .aside{
+    background-color: var(--cream-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+
     grid-area: aside;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6rem 5rem 0.5fr 2fr;
+    gap:0.5rem;
+}
+.aside-title{
+    color: var(--darkPurple-color);
+}
+.aside-img{
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    align-self: center;
+}
+.aside-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .us{
     grid-area: us;
@@ -20,7 +49,8 @@
     grid-template-rows: 5rem 1fr;
     grid-template-areas: 
     "title"
-    "content";
+    "uscontent";
+    gap: 1rem;
 }
 .us-title{
     grid-area: title;
@@ -30,39 +60,65 @@
     color: var(--mediumPurple-color);
 }
 .us-content{
-    grid-area: content;
+    grid-area: uscontent;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat( auto-fit, minmax(200px, 1fr) );
+    gap: 2rem;
 }
 
 .professional-r{
     display:grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 1fr;
+    gap: 3rem;
 }
 .professional-l{
     display:grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr;
+    gap: 3rem;
 }
 
 
 .professional-text{
-    width: 100%;
-    height: 100%;
-    
     display:grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 2fr;
 }
+
+.specialty{
+    font-style: italic;
+}
+.description{
+    font-size: small;
+}
+
 .professional-img{
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
 }
 .professional-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
+}
+
+#jose{
+    object-position: 20% 35%; /*x y*/
+}
+
+@media (max-width: 1400px){
+    .aside {
+        display: none;
+    }
+    .container{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 }
