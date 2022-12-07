@@ -1,3 +1,68 @@
 .nav a.selected {
     color: var(--gold-color) !important;
-  }
+}
+/*este está pensado primero para desktop porque tiene aside*/
+.container{
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "aside us";
+}
+.aside{
+    grid-area: aside;
+}
+.us{
+    grid-area: us;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr;
+    grid-template-areas: 
+    "title"
+    "content";
+}
+.us-title{
+    grid-area: title;
+
+    justify-self: center;
+    align-self: center;
+    color: var(--mediumPurple-color);
+}
+.us-content{
+    grid-area: content;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat( auto-fit, minmax(200px, 1fr) );
+}
+
+.professional-r{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+}
+.professional-l{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+
+
+.professional-text{
+    width: 100%;
+    height: 100%;
+    
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+}
+.professional-img{
+    width: 100%;
+    height: 100%;
+}
+.professional-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
