@@ -136,7 +136,6 @@ header{
   grid-area: nav;
   visibility: hidden;
   display: none;
-  
 }
 
 
@@ -241,20 +240,51 @@ svg {
 }
 
 @media (min-width:800px){
+  header{
+    grid-template-columns:1fr 5fr;
+    grid-template-areas: 
+    "logo nav";
+    
+  }
+  
   .nav{
     visibility: visible;
-    display: contents;
-    
-	  
+    display: grid;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "aboutus services gallery booking contact" ;
+          
+  }
+  
+  .aboutus {
+    grid-area: aboutus;
+  }
+
+  .services {
+    grid-area: services;
+  }
+  
+  .gallery {
+    grid-area: gallery;
+  }
+
+  .booking {
+    grid-area: booking;
+  }
+
+  .contact {
+    grid-area: contact;
   }
   
   .logo img{
     width: 125px;
-    margin-left: 15px;
+    margin-left: 2rem;
   }
 
   .nav a {
-    margin-top: 12%;
+    margin-top: 45px;
     line-height: 50px;
     height: 100%;
     font-size: 20px;
@@ -267,37 +297,16 @@ svg {
     color: var(--white-color);
     cursor: pointer;
   }
-  
-  
-  
-  a:nth-child(1) {
-    width: 100px;
-  }
-  a:nth-child(2) {
-    width: 110px;
-  }
-  a:nth-child(3) {
-    width: 100px;
-  }
-  a:nth-child(4) {
-    width: 160px;
-  }
-  a:nth-child(5) {
-    width: 120px;
-  }
-    a:hover {
-    width: 125px;
+
+  .nav a:hover {
+    /* width: 125px; */
     height: 50px;
     left: 0;
     color: #000;
     background-color: var(--mediumPurple-color);
   }
-  header{
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "logo nav nav nav nav nav";
-    
-  }
+
+  
   /* hamburguesa*/
   .hamburguer{
     visibility: hidden;
