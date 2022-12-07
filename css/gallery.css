@@ -1,3 +1,17 @@
+:root{
+    --black-color: black;
+    --white-color: white;
+    --mediumPurple-color:#5a4c59;
+    --darkPurple-color: #41415b;
+    --beige-color:#f1ece9;
+    --gold-color:#b78838;
+  
+  }
+
+.nav a.selected {
+    color: var(--gold-color) !important;
+  }
+
 .content{
     display: grid;
     grid-area: content;
@@ -31,7 +45,7 @@
     height:100%;
     overflow:auto;
     background-color:#41415b(0,0,0);
-    background-color:rgba(0,0,0,0.8)
+    background-color:var(--black-color);
 }
     
 .modal-content{
@@ -61,7 +75,7 @@
     float:right;
     font-size:32px;
     font-weight:bold;
-    color:#b78838;
+    color:var(--gold-color);
 }
 
 .modal-content, #caption {   
@@ -84,7 +98,7 @@
     width: 100%;
     max-width: 700px;
     text-align: center;
-    color:#b78838;
+    color:var(--gold-color);
     font-weight: bolder;
     padding: 10px;
 }

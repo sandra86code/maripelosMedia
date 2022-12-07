@@ -6,6 +6,12 @@
 
 }
 
+
+.nav a.selected {
+  color: var(--gold-color) !important;
+}
+
+
 .container {
   width: 95%;
   margin: auto;
