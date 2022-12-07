@@ -1,18 +1,17 @@
 .nav a.selected {
     color: var(--gold-color) !important;
-  }
-
-.grid-container{
-    gap: 1rem;
 }
+
 /*grid principal*/
 .container {
-    box-shadow: 5px 10px 8px var(--darkPurple-color);
-    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    word-break: break-word;
+    box-shadow: 5px 10px 8px -8px var(--darkPurple-color);
    
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "details"
     "form";
@@ -20,7 +19,8 @@
 
 /*resetear valores por defecto dentro del grid principal*/
 .container p,
-.container h2{
+.container h2,
+.container h1{
     margin: 0;
     padding: 0;
 }
@@ -28,32 +28,31 @@
 .contact-details {
     background-color: var(--mediumPurple-color);
     border-radius: inherit;
-    padding: 1.2rem;
     color: var( --cream-color);
-    word-break: break-word;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     grid-area: details;
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows:  0.5fr, 0.5fr, 3fr, 0.5fr, 0.5fr, 0.5fr;
+    grid-template-columns: 0.5rem 0.1fr 0.85fr 0.5rem;
+    grid-template-rows:  0.5fr 0.5fr 3fr 0.5fr 0.5fr 0.5fr;
     grid-template-areas: 
-    "title title"
-    "adIcon adText"
-    "map map"
-    "eIcon eText"
-    "pIcon pText"
-    "hIcon hText";
+    "title title title title"
+    ". adIcon adText ."
+    ". map map ."
+    ". eIcon eText ."
+    ". pIcon pText ."
+    ". hIcon hText .";
     gap: 1rem;
 }
 
 /*grid areas for details*/
 .details-title{
     grid-area: title;
-    width: max-content; 
-    justify-self: center;
     align-self: center;
 
     text-transform: uppercase;
+    text-align: center;
     color: var(--gold-color);
 }
 .details-adress-icon{
@@ -68,16 +67,16 @@
 .details-map{
     grid-area: map;
     width: 90%;
-    height: 100%;
+    height: 100%; 
     overflow: hidden;
-    justify-self: center;
+    margin: auto; 
 }
 .details-map iframe{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border: #b78838;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; 
 }
 .details-email-icon{
     grid-area: eIcon;
@@ -119,28 +118,55 @@
 .contact-form {
     border-radius: inherit;
     color: var(--darkPurple-color);
-    padding: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
+    grid-area: form;
     display: grid;
     gap: 0.8rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.1fr;
+    grid-template-columns: 0.075fr 0.85fr 0.075fr;
+    grid-template-rows: 0.3fr 0.2fr 0.2fr 0.2fr 0.3fr 0.1fr;
+    grid-template-areas: 
+    "ftitle ftitle ftitle"
+    ". name ."
+    ". email ."
+    ". subject ."
+    ". message ."
+    ". button .";
 }
 
 .form-title{
-    width: max-content; 
-    justify-self: center;
+    grid-area: ftitle;
+    text-align: center;
+    align-self: center;
+    margin: 1rem;
+}
+.name{
+    grid-area: name;
+}
+.email{
+    grid-area: email;
+}
+.subject{
+    grid-area: subject;
+}
+.message{
+    grid-area: message;
+}
+.form-submit{
+    grid-area: button;
 }
 
 .form-group {
     display: grid;
     gap: 0.2rem;
     border-radius: inherit;
+    font-size: 1.1rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-    border-radius: inherit;
+    border-radius: 0.5rem;
     border: none;
     height: 1.8rem;
     padding: 0.2rem 0.5rem;
@@ -150,6 +176,7 @@
 
 ::placeholder {
     color: var(--mediumPurple-color);
+    word-break: break-all;
 }
 
 .contact-form textarea {
@@ -159,16 +186,13 @@
 
 /*botones igual que en reserva*/
 button{
-  border-radius: inherit;
+  border-radius: 0.5rem;
   width: 100%;
   height: 3rem;
   font-size: 1rem;
-  justify-self: center;
   align-self: center;
 
-  display: inline-block;
   color: var(--white-color);
-  /*font-size: 28px;*/
   font-weight: bold;
   line-height: 1.5;
 
@@ -190,15 +214,19 @@ button:hover {
 
 /* desktop */
 @media (min-width: 1400px) {
-  html {
-    font-size: 25px;
-  }
-  .container {
-    margin: auto;
-    grid-template-columns:3fr 7fr;
-    grid-template-areas:
-    "details form";
-}
+    html {
+        font-size: 25px;
+    }
+    .container {
+        border-radius: 0.5rem;
+        max-width: 80%;
+        margin-left: 10%;
+
+        grid-template-columns: 1fr 1.5fr ;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        "details form";
+    }
 }
 
 /* tablet */ 
