@@ -1,3 +1,7 @@
+.nav a.selected {
+    color: var(--gold-color) !important;
+  }
+
 .grid-container{
     gap: 1rem;
 }

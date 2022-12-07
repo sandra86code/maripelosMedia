@@ -1,0 +1,3 @@
+.nav a.selected {
+    color: var(--gold-color) !important;
+  }
