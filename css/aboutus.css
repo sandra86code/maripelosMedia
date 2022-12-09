@@ -16,19 +16,30 @@
     "aside us";
     gap: 2rem;
 }
+.container p,
+.container h2,
+.container h1{
+    margin: 0;
+    padding: 0;
+}
+
 .aside{
-    background-color: var(--cream-color);
+    background-color: var(--mediumPurple-color);
     border-radius: 0.5rem;
     padding: 1rem;
+    text-align: center;
+    color: var(--cream-color);
 
     grid-area: aside;
     display:grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 6rem 5rem 0.5fr 2fr;
+    grid-template-rows: 6rem 6rem 300px 1fr;
     gap:0.5rem;
 }
-.aside-title{
-    color: var(--darkPurple-color);
+.aside-title a{
+    text-decoration: none;
+    color: var(--gold-color);
+    font-size: 1.2rem;
 }
 .aside-img{
     width: 100%;
@@ -46,7 +57,7 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 5rem 1fr;
+    grid-template-rows: 7rem 1fr;
     grid-template-areas: 
     "title"
     "uscontent";
@@ -58,48 +69,59 @@
     justify-self: center;
     align-self: center;
     color: var(--mediumPurple-color);
+    font-size: 1.5rem;
 }
 .us-content{
     grid-area: uscontent;
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat( auto-fit, minmax(200px, 1fr) );
-    gap: 2rem;
+    grid-template-rows: repeat( auto-fit, minmax(50px, 200px) );
+    gap: 2.2rem;
 }
 
 .professional-r{
     display:grid;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 3rem;
+    grid-template-columns: 0.2fr 0.9fr 0.8fr;
+    grid-template-rows: auto;
+    gap: 1rem;
 }
 .professional-l{
     display:grid;
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: 1fr;
-    gap: 3rem;
+    grid-template-columns: 0.8fr 1fr 0.2fr;
+    grid-template-rows: auto;
+    gap: 1rem;
 }
 
-
+.professional-l .professional-img{
+    justify-self: end;
+}
+.professional-column{
+    border-radius: 0.5rem;
+    background-color: var(--cream-color);
+}
 .professional-text{
     display:grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-rows: 1.5fr 1fr 1.5fr;
 }
 
+.name{
+    align-self: center;
+}
 .specialty{
     font-style: italic;
+    font-size: 1.2rem;
 }
 .description{
-    font-size: small;
+  font-weight: 400;
 }
 
 .professional-img{
-    width: 100%;
+    width: 70%;
     height: 100%;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 0.5rem;
 }
 .professional-img img{
     width: 100%;
@@ -109,7 +131,7 @@
 }
 
 #jose{
-    object-position: 20% 35%; /*x y*/
+    object-position: 30% 25%; /*x y*/
 }
 
 @media (max-width: 1400px){
