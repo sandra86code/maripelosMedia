@@ -35,6 +35,7 @@ table {
     background-color: var(--mediumPurple-color);
     font-size: 40px;
     margin: 40px;
+    margin-top: 100px;
   }
   
   thead{
@@ -83,6 +84,7 @@ table {
     "title2 title2 title2"
     "table7 table8 table9"
     ;
+    margin-bottom: 150px;
 }
 
 .title-section1{
@@ -145,10 +147,13 @@ table {
         ;
         margin:auto ;
         gap: 20px;
+        margin-bottom: 150px;
     } 
     table {
         width: 390px;
-    } 
+    }
+
+
 }
   /* @media para las cajas (max-width : 800px)  */
   @media (max-width:800px) {
@@ -156,7 +161,7 @@ table {
         display: grid;
         grid-area: content;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 1fr 0.2fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1.1fr 1fr 1fr 1fr 1fr 0.2fr 1fr 1fr 1fr;
         grid-template-areas:
         "title"
         "table1" 
@@ -167,13 +172,18 @@ table {
         "title2"
         "table7" 
         "table8" 
-        "table9"
-        ;
+        "table9";
+        margin-bottom: 100px;
     }
+
+    .title-section {
+      margin-top: 50px;
+    }
+
     table {
         width: 280px;
     } 
-    }
+}
 
 
 
