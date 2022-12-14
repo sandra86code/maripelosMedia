@@ -101,17 +101,13 @@
     aspect-ratio: 16 / 9;
 }
 
-#jose{
-    object-position: 30% 25%; /*x y*/
-}
-
 
 /* responsive */
 
 /* desktop */
-@media (min-width: 1200px){
+@media (min-width: 1000px){
     html {
-        font-size: 23px;
+        font-size: 25px;
     }
 
     .container{
@@ -136,7 +132,10 @@
         display:grid;
         grid-template-columns: 1fr;
         grid-template-rows: 7rem 6rem 300px 1fr;
-        gap:1rem;
+        gap:0.5rem;
+    }
+    .aside-title{
+        align-self: center;
     }
     .aside-title a{
         text-decoration: none;
