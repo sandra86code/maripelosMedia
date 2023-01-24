@@ -48,8 +48,11 @@
   object-fit: cover;
 }
 
-.shop-pic img{
+.shop-pic {
   width: 100%;
+}
+.responsive-item {
+  width: 80%;
 }
 
 .aside {
